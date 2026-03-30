@@ -81,6 +81,18 @@
       });
       document.getElementById(id).classList.add('active');
     }
+    function checkAnswer() {
+  let answer = document.getElementById("q1").value;
+  let result = document.getElementById("result1");
+
+  if(answer == "5") {
+    result.innerHTML = " ✅ Dobrze!";
+    result.style.color = "green";
+  } else {
+    result.innerHTML = " ❌ Spróbuj jeszcze raz";
+    result.style.color = "red";
+  }
+}
   </script>
 
 </head>
@@ -101,7 +113,12 @@
 
   <div id="dodawanie" class="section active">
     <h2>➕ Dodawanie</h2>
-    <div class="task">2 + 3 = ?</div>
+    <<div class="task">
+  2 + 3 = 
+  <input type="number" id="q1">
+  <button onclick="checkAnswer()">Sprawdź</button>
+  <span id="result1"></span>
+</div>
     <div class="task">4 + 5 = ?</div>
     <div class="task">10 + 2 = ?</div>
   </div>
